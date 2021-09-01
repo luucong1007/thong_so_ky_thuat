@@ -38,11 +38,11 @@ public class NhomThongSoController {
 
     @GetMapping("/search")
     public ResponseEntity<?> search(@RequestParam(name = "ma", required = false) String ma,
-                                    @RequestParam(name = "tenHangHoa", required = false) String tenHangHoa,
+                                    @RequestParam(name = "text", required = false) String text,
                                     @RequestParam(name = "page", defaultValue = "1", required = false) Integer page,
                                     @RequestParam(name = "size", defaultValue = "10", required = false) Integer size) {
         Pageable pageable = PageRequest.of(page - 1, size);
-        Page<NhomThongSo> hangHoas = nhomThongSoService.search(ma, tenHangHoa, pageable);
+        Page<NhomThongSo> hangHoas = nhomThongSoService.search(ma, text, pageable);
         return ResponseEntity.ok(hangHoas);
     }
 
