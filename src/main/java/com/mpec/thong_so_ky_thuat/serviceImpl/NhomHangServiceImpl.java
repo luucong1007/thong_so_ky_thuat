@@ -47,6 +47,7 @@ public class NhomHangServiceImpl implements NhomHangService {
         try {
             Optional<NhomHang> monHocOptional = findById(nhomHang.getId());
             if (!monHocOptional.isPresent()) {
+                System.out.println("Nhóm hàng id not found");
                 return Optional.empty();
             }
             NhomHang nhomHang1 = monHocOptional.get();
