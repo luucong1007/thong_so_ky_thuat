@@ -2,6 +2,7 @@ package com.mpec.thong_so_ky_thuat.entities;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -24,14 +25,17 @@ public class HangHoaThongSo {
 
     @ManyToOne
     @JoinColumn(name = "hang_hoa_id")
+    @JsonBackReference(value = "hang-hoa")
     private HangHoa hangHoa;
 
     @ManyToOne
     @JoinColumn(name = "thong_so_ki_thuat_id")
+    @JsonBackReference(value = "thong-so-ki-thuat")
     private ThongSoKiThuat thongSoKiThuat;
 
     @ManyToOne
     @JoinColumn(name = "thong_so_chi_tiet_id")
+    @JsonBackReference(value = "thong-so-chi-tiet")
     private ThongSoChiTiet thongSoChiTiet;
 
     @Column(name = "gia_tri")

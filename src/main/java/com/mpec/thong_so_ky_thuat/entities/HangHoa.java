@@ -57,4 +57,7 @@ public class HangHoa {
 
     @Column(name = "xoa")
     private  boolean xoa;
+
+    @Transient
+    private List<HangHoaThongSo> hangHoaThongSos;
 }

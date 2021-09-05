@@ -1,12 +1,14 @@
 package com.mpec.thong_so_ky_thuat.entities;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -28,8 +30,12 @@ public class ThongSoChiTiet {
 
     @ManyToOne
     @JoinColumn(name = "thong_so_ki_thuat_id")
+    @JsonBackReference
     private ThongSoKiThuat thongSoKiThuat;
 
     @Column(name = "xoa")
     private  boolean xoa;
+
+    @Transient
+    private List<HangHoaThongSo> hangHoaThongSos;
 }
