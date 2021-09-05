@@ -1,7 +1,6 @@
 package com.mpec.thong_so_ky_thuat.service;
 
 import com.mpec.thong_so_ky_thuat.entities.NhomThongSo;
-import com.mpec.thong_so_ky_thuat.entities.dto.HangHoaDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

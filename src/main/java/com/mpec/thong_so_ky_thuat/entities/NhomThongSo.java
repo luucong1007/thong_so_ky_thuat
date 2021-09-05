@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,4 +32,7 @@ public class NhomThongSo {
 
     @Column(name = "xoa")
     private  boolean xoa;
+
+    @Transient
+    private List<ThongSoKiThuat> thongSoKiThuats;
 }
