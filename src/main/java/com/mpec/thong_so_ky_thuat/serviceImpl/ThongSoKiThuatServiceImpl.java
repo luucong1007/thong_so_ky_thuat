@@ -128,13 +128,6 @@ public class ThongSoKiThuatServiceImpl implements ThongSoKiThuatService {
             thongSoKiThuat1.setNhomThongSo(nhomThongSoOptional.get());
             thongSoKiThuat1.setNhomHang(nhomHangOptional.get());
             return Optional.ofNullable(thongSoKiThuatRepo.save(thongSoKiThuat1));
-
-//            List<ThongSoChiTiet> thongSoChiTiets = new ArrayList<>();
-//                ThongSoChiTiet tsct = new ThongSoChiTiet();
-//                tsct.setGiaTri(thongSoChiTiets.get());
-//                thongSoChiTiets.add(tsct);
-//
-//            List<ThongSoChiTiet> thongSoChiTiet1 = thongSoChiTietRepo.saveAll(thongSoChiTiets);
         } catch (Exception ex) {
             return Optional.empty();
         }

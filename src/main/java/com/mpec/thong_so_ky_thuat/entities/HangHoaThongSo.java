@@ -3,10 +3,7 @@ package com.mpec.thong_so_ky_thuat.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -37,6 +34,7 @@ public class HangHoaThongSo {
     @JoinColumn(name = "thong_so_chi_tiet_id")
     @JsonBackReference(value = "thong-so-chi-tiet")
     private ThongSoChiTiet thongSoChiTiet;
+
 
     @Column(name = "gia_tri")
     private  String giaTri;

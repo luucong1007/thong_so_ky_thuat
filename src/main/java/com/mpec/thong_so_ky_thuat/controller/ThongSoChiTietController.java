@@ -42,7 +42,7 @@ public class ThongSoChiTietController {
         if (thongSoChiTiets !=null) {
             return ResponseEntity.ok(thongSoChiTiets);
         } else {
-            return ResponseEntity.ok("Nhom Thong so id không tồn tại");
+            return ResponseEntity.ok("Thong so ki thuat id không tồn tại");
         }
     }
 

@@ -1,12 +1,11 @@
 package com.mpec.thong_so_ky_thuat.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.*;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -23,7 +22,7 @@ public class ThongSoKiThuat {
     private int id;
 
     @Column(name = "ten_thong_so")
-    private  String tenThongSo;
+    private String tenThongSo;
 
     @ManyToOne
     @JoinColumn(name = "nhom_hang_id")
@@ -35,12 +34,16 @@ public class ThongSoKiThuat {
     private NhomThongSo nhomThongSo;
 
     @Column(name = "xoa")
-    private  boolean xoa;
+    private boolean xoa;
 
-    @Transient
+    @OneToMany(mappedBy = "thongSoKiThuat", cascade = CascadeType.ALL)// Quan hệ 1-n
+    @EqualsAndHashCode.Exclude // không sử dụng trường này trong equals và hashcode
+    @ToString.Exclude // Không sử dụng trong toString()
     private List<ThongSoChiTiet> thongSoChiTiets;
 
-    @Transient
+    @OneToMany(mappedBy = "thongSoKiThuat", cascade = CascadeType.ALL)// Quan hệ 1-n
+    @EqualsAndHashCode.Exclude // không sử dụng trường này trong equals và hashcode
+    @ToString.Exclude // Không sử dụng trong toString()
     private List<HangHoaThongSo> hangHoaThongSos;
 
 }
